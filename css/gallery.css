@@ -1,0 +1,279 @@
+/* CSS RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CORPS DU SITE */
+body, html {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f7f3f0;
+    background-image: url('https://i.pinimg.com/736x/8e/79/52/8e7952771fe4c48802f7cf8c370c2c03.jpg'); /* Remplace par ton image */
+    background-size: cover; /* Pour que l'image couvre toute la page */
+    background-repeat: no-repeat; /* Pas de répétition de l'image */
+    background-position: center center; /* Centrer l'image sur la page */
+    color: #4a4a4a;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* S'assurer que la hauteur couvre tout l'écran */
+}
+
+/* HEADER ET NAVIGATION */
+header {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+nav {
+    background-color: rgba(255, 209, 220, 0.85); /* Utilisation d'opacité pour plus d'élégance */
+    padding: 10px 40px;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #4a4a4a;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+}
+
+header nav ul li a:hover {
+    color: #af4b67;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(255, 209, 220, 0.95); /* Léger fond pastel avec opacité */
+    color: #4a4a4a;
+    font-family: 'Dancing Script', cursive;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: auto; /* S'assure que le footer reste tout en bas */
+}
+
+/* TITRE PRINCIPAL DE LA PAGE */
+.page-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: #af4b67;
+    text-align: center;
+    margin: 30px auto 20px;
+    text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2); /* Ombre sur le titre */
+}
+
+/* GALERIE */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px; /* Espacement entre les éléments */
+    margin: 0 auto;
+    max-width: 1200px; /* Largeur maximale de la galerie sur desktop */
+    padding: 15px;
+}
+
+/* Style des items */
+.gallery-item {
+    background-color: transparent;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+
+.gallery-item:hover {
+    transform: scale(1.02); /* Légère mise en avant au survol */
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Médias (images et vidéos) */
+.gallery-item img,
+.gallery-item video {
+    width: 100%; /* Prend toute la largeur du conteneur */
+    height: auto; /* Conserve les proportions */
+    max-height: 200px; /* Limite la hauteur maximale */
+    object-fit: cover; /* Rogne le contenu si nécessaire */
+}
+
+.video-item {
+    grid-column: span 2; /* Vidéos prennent deux colonnes */
+}
+
+
+/* Si l'élément contient une vidéo : occupe deux colonnes */
+.gallery-item.video-item {
+    grid-column: span 2; /* Vidéo occupe deux colonnes */
+}
+
+
+.gallery-item video {
+    background-color: #000; /* Fond noir pour les vidéos */
+}
+
+/* Légendes dans la galerie */
+.gallery-caption {
+    padding: 8px 10px; /* Espacement autour du texte */
+    font-size: 0.9rem;
+    color: #4a4a4a;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    border-top: 1px solid #e0e0e0;
+    width: 100%; /* S'assure que la légende occupe toute la largeur */
+}
+
+/* MODALE */
+.modal {
+    display: none; /* Par défaut cachée */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Fond sombre avec opacité */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.modal.active {
+    display: flex; /* Afficher la modale */
+    opacity: 1; /* Transition de l'apparition */
+}
+
+.modal-content {
+    max-width: 90%; /* Largeur maximale pour s'adapter à l'écran */
+    max-height: 90%; /* Hauteur maximale */
+    background-color: #fff; /* Fond blanc */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* Évite tout débordement */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Ombre subtile */
+    position: relative;
+}
+
+/* Pour images et vidéos dans la modale */
+.modal-content img {
+    width: auto; /* Permet à l'image de s'adapter automatiquement */
+    height: auto; /* Maintient les proportions de l'image */
+    max-width: 90%; /* Limite la largeur maximale à 90% de l'écran */
+    max-height: 85vh; /* Limite la hauteur maximale à 85% de la hauteur de la fenêtre */
+    border-radius: 10px; /* Angles arrondis pour un rendu propre */
+    object-fit: contain; /* Évite toute déformation et ajuste selon les proportions */
+}
+
+.modal-content video {
+    width: 100%; /* Prend toute la largeur disponible */
+    height: auto; /* Conserve les proportions */
+    max-height: 85vh; /* Limite la hauteur maximale en fonction de l'écran */
+    outline: none; /* Supprime tout contour pouvant masquer la vidéo */
+    z-index: 0; /* Priorité sur les autres éléments */
+    object-fit: contain; /* Conserve les proportions sans débordement */
+    pointer-events: auto; /* Permet d'interagir avec la vidéo */
+}
+
+
+/* Fermeture de la modale */
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.modal-close:hover {
+    transform: scale(1.2) rotate(90deg);
+}
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+
+/* RESPONSIVENESS */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr); /* Exactement 3 colonnes */
+        gap: 10px; /* Réduction de l'espace entre les éléments */
+        padding: 10px; /* Moins de padding pour optimiser l'espace */
+    }
+
+    .modal-content {
+        max-width: 95%;
+        max-height: 85%;
+    }
+    .gallery-item {
+        border: 1px solid #ddd; /* Bordure plus fine */
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05); /* Ombre douce */
+        border-radius: 8px; /* Angles légèrement arrondis */
+        padding: 5px; /* Réduction de l'espace interne */
+    }
+
+    /* Médias (images et vidéos) */
+    .modal-content img {
+        max-width: 95%; /* Limite la largeur à 95% de l'écran pour plus de marge */
+        max-height: 70vh; /* Réduit légèrement la hauteur pour téléphones */
+    }
+    .gallery-item video {
+        max-height: 150px; /* Réduction de la hauteur maximale */
+        object-fit: cover; /* Garder les proportions */
+    }
+
+    .video-item {
+        grid-column: 2; /* Retour à 1 colonne sur petits écrans */
+    }
+
+
+    .page-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* Affiche 2 colonnes */
+    }
+
+    /* Réduction encore plus poussée pour les médias */
+    .gallery-item img,
+    .gallery-item video {
+        max-height: 120px;
+    }
+
+
+    .page-title {
+        font-size: 2rem;
+    }
+}
