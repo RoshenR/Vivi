@@ -1,0 +1,114 @@
+/* ECRAN DE CHARGEMENT */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffe4ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loader {
+    text-align: center;
+}
+
+.loader img {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.loader p {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: #af4b67;
+    margin-top: 20px;
+}
+
+/* CONTAINER PRINCIPAL */
+.memory-container {
+    display: flex;
+    max-width: 1000px;
+    margin: 40px auto;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+/* BOUTONS DE THEMES */
+.themes-list {
+    width: 30%;
+}
+
+.themes-list button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #ffd1dc;
+    color: #4a4a4a;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.themes-list button:hover {
+    background-color: #af4b67;
+    color: white;
+}
+
+/* ZONE D'AFFICHAGE DES SOUVENIRS */
+.memory-display {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* GRILLE D'IMAGES */
+.memory-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    width: 100%;
+}
+
+.memory-images img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    object-fit: cover;
+}
+
+/* TEXTE DU SOUVENIR */
+.memory-text {
+    font-size: 1rem;
+    color: #4a4a4a;
+    background-color: rgba(255,255,255,0.8);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .memory-container {
+        flex-direction: column;
+    }
+
+    .themes-list,
+    .memory-display {
+        width: 100%;
+    }
+
+    .memory-images {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}

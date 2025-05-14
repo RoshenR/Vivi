@@ -1,10 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Souvenirs avec Toi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/memories.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
 
+<div id="loading-screen">
+    <div class="loader">
+        <img src="images/Cinnamoroll__All_Expressions___LINE_stickers___LINE_STORE-removebg-preview.png" alt="Personnage préféré">
+        <p>Chargement...</p>
+    </div>
+</div>
+
+<header class="fade-in">
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="photos.html">Photos et Vidéos</a></li>
+            <li><a href="poems.html">Poèmes</a></li>
+            <li><a href="memories.html">Souvenirs</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="memory-container fade-in">
+    <div class="themes-list">
+        <button onclick="showMemory('vacances')">Vacances</button>
+        <button onclick="showMemory('biscarrosse')">Biscarrosse</button>
+<!--        <button onclick="showMemory('rencontre')">Première Rencontre</button>-->
+    </div>
+
+    <div class="memory-display">
+        <div class="memory-images" id="memory-images">
+            <!-- Images dynamiques -->
+        </div>
+        <div class="memory-text" id="memory-text">
+            Clique sur un thème pour revivre nos souvenirs.
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>Avec tout mon amour ❤️</p>
+</footer>
+
+<script src="js/memories.js" defer></script>
+<script src="js/script.js" defer></script>
 </body>
 </html>

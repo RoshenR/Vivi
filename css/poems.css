@@ -1,0 +1,108 @@
+@import url("style.css"); /* Importe ton style principal pour garder l'uniformité */
+
+
+body {
+    background-image: url('../images/💗 hello kitty wallpaper ✧˖@eestrellititas.jpg'); /* Remplace par le chemin de ton image */
+    background-attachment: fixed;
+    background-size: cover; /* Adapte à la taille de l'écran */
+    background-position: center; /* Centre l'image */
+    background-repeat: no-repeat;
+}
+
+/* ECRAN DE CHARGEMENT */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffe4ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loader {
+    text-align: center;
+}
+
+.loader img {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.loader p {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: #af4b67;
+    margin-top: 20px;
+}
+
+
+/* POEMES SECTION */
+.poems-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.poem {
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.poem:hover {
+    transform: translateY(-5px);
+}
+
+.poem-title {
+    font-family: 'Dancing Script', cursive;
+    background-color: #ffd1dc;
+    color: #af4b67;
+    cursor: pointer;
+    padding: 15px 20px;
+    margin: 0;
+}
+
+.poem-content {
+    display: none;
+    padding: 20px;
+    color: #4a4a4a;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Animation du poème qui s'affiche */
+.poem-content.active {
+    display: block;
+    animation: poemAppear 0.5s ease;
+}
+
+@keyframes poemAppear {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .poems-container {
+        padding: 10px;
+    }
+    .poem-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .poem-title {
+        font-size: 1.3rem;
+        padding: 10px;
+    }
+}

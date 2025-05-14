@@ -20,6 +20,39 @@ body, html {
     min-height: 100vh; /* S'assurer que la hauteur couvre tout l'écran */
 }
 
+/* ECRAN DE CHARGEMENT */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffe4ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loader {
+    text-align: center;
+}
+
+.loader img {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.loader p {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: #af4b67;
+    margin-top: 20px;
+}
+
+
 /* HEADER ET NAVIGATION */
 header {
     display: flex;
